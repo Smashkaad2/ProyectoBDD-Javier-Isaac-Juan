@@ -1,4 +1,4 @@
-package com.example.proyectico2.DTO;
+package com.example.proyectobdd.DTO;
 
 import java.util.Date;
 
@@ -61,3 +61,4 @@ public class DTOTratamientoPagar {
         this.idTratamiento = id_tratamiento;
     }
 }
+

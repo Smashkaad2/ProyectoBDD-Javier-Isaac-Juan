@@ -1,4 +1,4 @@
-package com.example.proyectobdd;
+package com.example.proyectobdd.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
@@ -6,7 +6,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
-public class eventosEliminarModificarMascota {
+public class ControllerEliminarModificarMascota {
     @FXML
     private Label labelNombreMascota;
     @FXML

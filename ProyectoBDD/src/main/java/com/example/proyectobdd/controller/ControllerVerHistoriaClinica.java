@@ -1,11 +1,10 @@
-package com.example.proyectobdd;
+package com.example.proyectobdd.controller;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 
-public class eventosVerHistoriaClinica {
+public class ControllerVerHistoriaClinica {
     @FXML
     private Label labelNombreMascota;
     @FXML

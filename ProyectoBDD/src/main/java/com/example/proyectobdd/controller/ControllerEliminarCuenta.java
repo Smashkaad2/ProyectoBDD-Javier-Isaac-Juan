@@ -1,4 +1,4 @@
-package com.example.proyectobdd;
+package com.example.proyectobdd.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -6,19 +6,19 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
-public class eventosIniciarSesion {
+public class ControllerEliminarCuenta {
 
     @FXML
-    private Button buttonLogin;
+    private Button buttonDelete;
 
     @FXML
     private PasswordField passwordFieldPassword;
 
     @FXML
-    private Text txtLoginDescription;
+    private Text txtDeleteDescription;
 
     @FXML
-    private Text txtLoginInfo;
+    private Text txtDeleteInfo;
 
     @FXML
     private Text txtPassword;

@@ -1,4 +1,4 @@
-package com.example.proyectico2.controller;
+package com.example.proyectobdd.controller;
 
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;

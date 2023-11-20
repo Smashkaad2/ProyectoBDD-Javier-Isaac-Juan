@@ -7,4 +7,6 @@ module com.example.proyectobdd {
 
     opens com.example.proyectobdd to javafx.fxml;
     exports com.example.proyectobdd;
+    exports com.example.proyectobdd.controller;
+    opens com.example.proyectobdd.controller to javafx.fxml;
 }

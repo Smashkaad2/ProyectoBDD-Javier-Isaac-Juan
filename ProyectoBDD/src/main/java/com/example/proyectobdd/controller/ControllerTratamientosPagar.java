@@ -1,4 +1,4 @@
-package com.example.proyectico2.controller;
+package com.example.proyectobdd.controller;
 
 
 import com.example.proyectico2.DTO.DTOTratamientoPagar;
