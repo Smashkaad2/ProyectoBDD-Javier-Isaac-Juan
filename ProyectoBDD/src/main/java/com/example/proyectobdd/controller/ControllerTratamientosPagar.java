@@ -1,66 +1,126 @@
-package com.example.proyectobdd.controller;
+package com.example.clonada2.Controller;
 
-
-import com.example.proyectico2.DTO.DTOTratamientoPagar;
-import javafx.collections.FXCollections;
+import com.example.clonada2.entity.DTOTratamientosPagar;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
+
+import java.text.ParseException;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
+import java.text.SimpleDateFormat;
 
 import java.net.URL;
-import java.util.Date;
+
 import java.util.ResourceBundle;
 
 public class ControllerTratamientosPagar implements Initializable {
 
+    // Animals is equal to havng a list o tratamientos, the problem is that I cannot change that because then explotes and gives me an error :)
     @FXML
-    private TableView<DTOTratamientoPagar> tablaTratamientoPagar;
-
-    @FXML
-    private TableColumn<DTOTratamientoPagar, String> descripcion;
+    private TableView<DTOTratamientosPagar> animals;
 
     @FXML
-    private TableColumn<DTOTratamientoPagar, Integer> estado_tratamiento;
+    private TableColumn<DTOTratamientosPagar, Integer> idCol;
 
     @FXML
-    private TableColumn<DTOTratamientoPagar, Date> fecha_tratamiento;
+    private TableColumn<DTOTratamientosPagar, String> estadoCol;
 
     @FXML
-    private TableColumn<DTOTratamientoPagar, Integer> id_mascota;
+    private TableColumn<DTOTratamientosPagar, String> nameCol;
 
     @FXML
-    private TableColumn<DTOTratamientoPagar, Integer> id_tratamiento;
+    private TableColumn<DTOTratamientosPagar, Integer> mascotaCol;
 
-    private final ObservableList<DTOTratamientoPagar> tratamientoList = FXCollections.observableArrayList();
+    @FXML
+    private TableColumn<DTOTratamientosPagar, Date> fechaCol;
 
-    // Other variables...
+    @FXML
+    private TableColumn<DTOTratamientosPagar, Integer> costoCol;
+
+    @FXML
+    private TextField inputId;
+
+    @FXML
+    private TextField inputType;
+
+    @FXML
+    private TextField inputName;
+
+    @FXML
+    private TextField inputMascota;
+
+    @FXML
+    private TextField inputFecha;
+
+    @FXML
+    private TextField inputCosto;
+
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        // Initialize columns
-        descripcion.setCellValueFactory(new PropertyValueFactory<>("descripcion"));
-        estado_tratamiento.setCellValueFactory(new PropertyValueFactory<>("estadoTratamiento"));
-        fecha_tratamiento.setCellValueFactory(new PropertyValueFactory<>("fechaTratamiento"));
-        id_mascota.setCellValueFactory(new PropertyValueFactory<>("idMascota"));
-        id_tratamiento.setCellValueFactory(new PropertyValueFactory<>("idTratamiento"));
-
-        // Set items to the table
-
-
-        // Load data into tratamientoList (populate the ObservableList)
-        // You need to implement a method to load data into the tratamientoList.
-        loadData();
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        // Those same attributes with simple names are in here
+        idCol.setCellValueFactory(new PropertyValueFactory<DTOTratamientosPagar, Integer>("id"));
+        estadoCol.setCellValueFactory(new PropertyValueFactory<DTOTratamientosPagar, String>("estado"));
+        nameCol.setCellValueFactory(new PropertyValueFactory<DTOTratamientosPagar, String>("name"));
+        mascotaCol.setCellValueFactory(new PropertyValueFactory<DTOTratamientosPagar, Integer>("mascota"));
+        fechaCol.setCellValueFactory(new PropertyValueFactory<DTOTratamientosPagar, Date>("fecha"));
+        costoCol.setCellValueFactory(new PropertyValueFactory<DTOTratamientosPagar, Integer>("costo"));
+        setupTable();
     }
 
-    // Implement a method to load data into the tratamientoList
-    private void loadData() {
-        // Add sample data or fetch data from your data source
-        tratamientoList.add(new DTOTratamientoPagar("Description 1", 1, new Date(), 101, 201));
-        tratamientoList.add(new DTOTratamientoPagar("Description 2", 2, new Date(), 102, 202));
-        tablaTratamientoPagar.setItems(tratamientoList);
-        // Add more data as needed
+    @FXML
+    void submit(ActionEvent event) {
+        ObservableList<DTOTratamientosPagar> currentTableData = animals.getItems();
+        int currentAnimalId = Integer.parseInt(inputId.getText());
+
+        for (DTOTratamientosPagar animal : currentTableData) {
+            if(animal.getId() == currentAnimalId) {
+                animal.setEstado(inputType.getText());
+                animal.setName(inputName.getText());
+
+                String stringDate = inputFecha.getText();
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/MM/yyyy");
+                LocalDate localDate = LocalDate.parse(stringDate, formatter);
+                animal.setFecha(localDate);
+                animal.setCosto(Integer.parseInt(inputCosto.getText()));
+
+                animals.setItems(currentTableData);
+                animals.refresh();
+                break;
+            }
+        }
     }
-}   
+
+    @FXML
+    void rowClicked(MouseEvent event) {
+        DTOTratamientosPagar clickedAnimal = animals.getSelectionModel().getSelectedItem();
+        inputId.setText(String.valueOf(clickedAnimal.getId()));
+        inputType.setText(String.valueOf(clickedAnimal.getEstado()));
+        inputName.setText(String.valueOf(clickedAnimal.getName()));
+        inputMascota.setText(String.valueOf(clickedAnimal.getMascota()));
+        inputFecha.setText(String.valueOf(clickedAnimal.getFecha()));
+        inputCosto.setText(String.valueOf(clickedAnimal.getCosto()));
+    }
+
+    private void setupTable(){
+
+        LocalDate date = LocalDate.of(2023, 11, 20);
+
+        // Convert LocalDate to Date
+      //  Date date = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
+        DTOTratamientosPagar animal0 = new DTOTratamientosPagar(0,"Dog","Buddy", 24,date,200 );
+        DTOTratamientosPagar animal1 = new DTOTratamientosPagar(1,"Cat","Bella",23, date,100 );
+        DTOTratamientosPagar animal2 = new DTOTratamientosPagar(2,"Bear","Bob", 25, date,50);
+        DTOTratamientosPagar animal3 = new DTOTratamientosPagar(3,"Squid","Laila", 26, date,140 );
+        animals.getItems().addAll(animal0,animal1,animal2,animal3);
+    }
+}
