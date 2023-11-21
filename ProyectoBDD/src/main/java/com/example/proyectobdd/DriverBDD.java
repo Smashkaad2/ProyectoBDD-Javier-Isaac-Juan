@@ -1,5 +1,4 @@
-package com.example.clonada2;
-
+package com.example.proyectobdd;
 import java.sql.*;
 
 public class DriverBDD {

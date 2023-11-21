@@ -1,6 +1,6 @@
-package com.example.clonada2.Controller;
+package com.example.proyectobdd.controller;
 
-import com.example.clonada2.entity.DTOTratamientosPagar;
+import com.example.proyectobdd.DTO.DTOTratamientosPagar;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -11,12 +11,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 
-import java.text.ParseException;
 import java.time.LocalDate;
-import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
-import java.text.SimpleDateFormat;
 
 import java.net.URL;
 
@@ -82,16 +79,16 @@ public class ControllerTratamientosPagar implements Initializable {
         ObservableList<DTOTratamientosPagar> currentTableData = animals.getItems();
         int currentAnimalId = Integer.parseInt(inputId.getText());
 
-        for (DTOTratamientosPagar animal : currentTableData) {
-            if(animal.getId() == currentAnimalId) {
-                animal.setEstado(inputType.getText());
-                animal.setName(inputName.getText());
+        for (DTOTratamientosPagar DTOTratamientosPagar : currentTableData) {
+            if(DTOTratamientosPagar.getId() == currentAnimalId) {
+                DTOTratamientosPagar.setEstado(inputType.getText());
+                DTOTratamientosPagar.setName(inputName.getText());
 
                 String stringDate = inputFecha.getText();
                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/MM/yyyy");
                 LocalDate localDate = LocalDate.parse(stringDate, formatter);
-                animal.setFecha(localDate);
-                animal.setCosto(Integer.parseInt(inputCosto.getText()));
+                DTOTratamientosPagar.setFecha(localDate);
+                DTOTratamientosPagar.setCosto(Integer.parseInt(inputCosto.getText()));
 
                 animals.setItems(currentTableData);
                 animals.refresh();
