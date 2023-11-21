@@ -1,35 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectobdd.controller.ControllerIniciarSesion">
+
+<Pane prefHeight="346.0" prefWidth="313.0"
+      xmlns="http://javafx.com/javafx/8"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.proyectobdd.controller.ControllerIniciarSesion">
    <children>
-      <TextField fx:id="txtfieldUser" layoutX="166.0" layoutY="154.0" />
-      <PasswordField fx:id="passwordFieldPassword" layoutX="166.0" layoutY="200.0" />
-      <Button fx:id="buttonLogin" layoutX="147.0" layoutY="257.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="67.0" text="Login" />
-      <Text fx:id="txtUser" layoutX="96.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[User]">
+      <TextField fx:id="txtfieldUser" layoutX="129.0" layoutY="87.0" />
+      <PasswordField fx:id="passwordFieldPassword" layoutX="129.0" layoutY="133.0" />
+      <Button fx:id="buttonLogin" layoutX="116.0" layoutY="233.0" mnemonicParsing="false" onAction="#onClickLogin" prefHeight="36.0" prefWidth="67.0" text="Login" />
+      <Text fx:id="txtUser" layoutX="15.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuario">
          <font>
             <Font size="20.0" />
          </font>
       </Text>
-      <Text fx:id="txtPassword" layoutX="52.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[Password]">
+      <Text fx:id="txtPassword" layoutX="15.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contraseña">
          <font>
             <Font size="20.0" />
          </font>
       </Text>
-      <Text fx:id="txtLoginInfo" layoutX="43.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[Log In Screen]">
+      <Text fx:id="txtLoginInfo" layoutX="15.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Iniciar Sesion">
          <font>
-            <Font size="24.0" />
+            <Font size="36.0" />
          </font>
       </Text>
-      <Text fx:id="txtLoginDescription" layoutX="43.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Submit your username and password below">
+      <Button layoutX="119.0" layoutY="278.0" mnemonicParsing="false" onAction="#onClickRegister" text="Register" />
+      <ComboBox layoutX="183.0" layoutY="175.0" prefHeight="25.0" prefWidth="95.0" />
+      <Text fx:id="txtPassword1" layoutX="15.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tipo de Cuenta">
          <font>
-            <Font size="9.0" />
+            <Font size="20.0" />
          </font>
       </Text>
    </children>

@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectobdd.controller.ControllerIniciarSesion">
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectobdd.controller.ControllerIniciarSesion">
    <children>
       <TextField fx:id="txtfieldUser" layoutX="166.0" layoutY="154.0" />
       <PasswordField fx:id="passwordFieldPassword" layoutX="166.0" layoutY="200.0" />
-      <Button fx:id="buttonLogin" layoutX="147.0" layoutY="257.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="67.0" text="Login" />
+      <Button fx:id="buttonLogin" layoutX="133.0" layoutY="264.0" mnemonicParsing="false" onAction="#onClickLogin" prefHeight="36.0" prefWidth="67.0" text="Login" />
       <Text fx:id="txtUser" layoutX="96.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[User]">
          <font>
             <Font size="20.0" />
@@ -22,7 +21,7 @@
             <Font size="20.0" />
          </font>
       </Text>
-      <Text fx:id="txtLoginInfo" layoutX="43.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[Log In Screen]">
+      <Text fx:id="txtLoginInfo" layoutX="43.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login">
          <font>
             <Font size="24.0" />
          </font>
@@ -32,5 +31,6 @@
             <Font size="9.0" />
          </font>
       </Text>
+      <Button layoutX="136.0" layoutY="337.0" mnemonicParsing="false" onAction="#onClickRegister" text="Register" />
    </children>
 </Pane>

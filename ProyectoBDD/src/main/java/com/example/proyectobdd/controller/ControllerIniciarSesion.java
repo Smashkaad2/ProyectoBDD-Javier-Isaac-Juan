@@ -1,5 +1,6 @@
 package com.example.proyectobdd.controller;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
@@ -7,9 +8,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
 public class ControllerIniciarSesion {
-
-    @FXML
-    private Button buttonLogin;
 
     @FXML
     private PasswordField passwordFieldPassword;
@@ -29,4 +27,9 @@ public class ControllerIniciarSesion {
     @FXML
     private TextField txtfieldUser;
 
+    public void onClickLogin(ActionEvent actionEvent) {
+    }
+
+    public void onClickRegister(ActionEvent actionEvent) {
+    }
 }
