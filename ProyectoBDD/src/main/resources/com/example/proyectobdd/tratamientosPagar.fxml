@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
 <!-- this is a comment in Fxml -->
 <!-- lo primero que hay que observar es que el fx:id= esta normal y solo toca poner el nombre del atributo +col nombreAtributoCol -->
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.clonada2.Controller.ControllerTratamientosPagar">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.clonada2.Controller.ControllerTratamientosPagar">
     <children>
-        <TableView fx:id="animals" layoutX="309.0" layoutY="77.0" onMouseClicked="#rowClicked" prefHeight="246.0" prefWidth="480.0">
+        <TableView fx:id="animals" layoutX="294.0" layoutY="89.0" onMouseClicked="#rowClicked" prefHeight="246.0" prefWidth="480.0">
             <columns>
                 <TableColumn fx:id="idCol" prefWidth="90.0" text="tratamientoId" />
                 <TableColumn fx:id="estadoCol" prefWidth="75.0" text="Estado" />
