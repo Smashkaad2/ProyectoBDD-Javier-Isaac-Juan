@@ -1,19 +1,24 @@
-package com.example.proyectobdd.controller;
+package com.example.clonada2.Controller;
 
-import com.example.proyectobdd.DTO.DTOTratamientosPagar;
+import com.example.clonada2.entity.DTOTratamientosPagar;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 
+import java.text.ParseException;
 import java.time.LocalDate;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Date;
+import java.text.SimpleDateFormat;
 
 import java.net.URL;
 
@@ -44,28 +49,18 @@ public class ControllerTratamientosPagar implements Initializable {
     private TableColumn<DTOTratamientosPagar, Integer> costoCol;
 
     @FXML
-    private TextField inputId;
+    private TableColumn<DTOTratamientosPagar, String> descripcionCol;
 
-    @FXML
-    private TextField inputType;
 
-    @FXML
-    private TextField inputName;
 
-    @FXML
-    private TextField inputMascota;
-
-    @FXML
-    private TextField inputFecha;
-
-    @FXML
-    private TextField inputCosto;
+    public ArrayList<DTOTratamientosPagar> listaAnimalito = new ArrayList<DTOTratamientosPagar>();
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         // Those same attributes with simple names are in here
         idCol.setCellValueFactory(new PropertyValueFactory<DTOTratamientosPagar, Integer>("id"));
+        descripcionCol.setCellValueFactory(new PropertyValueFactory<DTOTratamientosPagar, String>("descripcion"));
         estadoCol.setCellValueFactory(new PropertyValueFactory<DTOTratamientosPagar, String>("estado"));
         nameCol.setCellValueFactory(new PropertyValueFactory<DTOTratamientosPagar, String>("name"));
         mascotaCol.setCellValueFactory(new PropertyValueFactory<DTOTratamientosPagar, Integer>("mascota"));
@@ -75,38 +70,71 @@ public class ControllerTratamientosPagar implements Initializable {
     }
 
     @FXML
+
     void submit(ActionEvent event) {
+        /*
         ObservableList<DTOTratamientosPagar> currentTableData = animals.getItems();
         int currentAnimalId = Integer.parseInt(inputId.getText());
 
-        for (DTOTratamientosPagar DTOTratamientosPagar : currentTableData) {
-            if(DTOTratamientosPagar.getId() == currentAnimalId) {
-                DTOTratamientosPagar.setEstado(inputType.getText());
-                DTOTratamientosPagar.setName(inputName.getText());
+        for (DTOTratamientosPagar animal : currentTableData) {
+            if(animal.getId() == currentAnimalId) {
+                animal.setEstado(inputType.getText());
+                animal.setDescripcion(inputDescripcion.getText());
+                animal.setName(inputName.getText());
 
                 String stringDate = inputFecha.getText();
                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/MM/yyyy");
                 LocalDate localDate = LocalDate.parse(stringDate, formatter);
-                DTOTratamientosPagar.setFecha(localDate);
-                DTOTratamientosPagar.setCosto(Integer.parseInt(inputCosto.getText()));
+                animal.setFecha(localDate);
+                animal.setCosto(Integer.parseInt(inputCosto.getText()));
 
                 animals.setItems(currentTableData);
                 animals.refresh();
                 break;
             }
         }
+
+         */
     }
 
     @FXML
     void rowClicked(MouseEvent event) {
         DTOTratamientosPagar clickedAnimal = animals.getSelectionModel().getSelectedItem();
+
+
+        DTOTratamientosPagar animalAnadir = new DTOTratamientosPagar(
+                clickedAnimal.getId(),
+                clickedAnimal.getEstado(),
+                clickedAnimal.getName(),
+                clickedAnimal.getMascota(),
+                clickedAnimal.getFecha(),
+                clickedAnimal.getCosto(),
+                clickedAnimal.getDescripcion()
+                );
+
+        System.out.println(
+                        clickedAnimal.getId()+ "," +
+                clickedAnimal.getEstado() + "," +
+                clickedAnimal.getName()+ "," +
+                clickedAnimal.getMascota() + "," +
+                clickedAnimal.getFecha()+ "," +
+                clickedAnimal.getCosto()
+        );
+
+        listaAnimalito.add(animalAnadir);
+
+
+        //DTOTratamientosPagar(int id, String estado, String name, int mascota, LocalDate fecha, int costo)
+        /*
         inputId.setText(String.valueOf(clickedAnimal.getId()));
         inputType.setText(String.valueOf(clickedAnimal.getEstado()));
         inputName.setText(String.valueOf(clickedAnimal.getName()));
         inputMascota.setText(String.valueOf(clickedAnimal.getMascota()));
         inputFecha.setText(String.valueOf(clickedAnimal.getFecha()));
         inputCosto.setText(String.valueOf(clickedAnimal.getCosto()));
+    */
     }
+
 
     private void setupTable(){
 
@@ -114,10 +142,14 @@ public class ControllerTratamientosPagar implements Initializable {
 
         // Convert LocalDate to Date
       //  Date date = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
-        DTOTratamientosPagar animal0 = new DTOTratamientosPagar(0,"Dog","Buddy", 24,date,200 );
-        DTOTratamientosPagar animal1 = new DTOTratamientosPagar(1,"Cat","Bella",23, date,100 );
-        DTOTratamientosPagar animal2 = new DTOTratamientosPagar(2,"Bear","Bob", 25, date,50);
-        DTOTratamientosPagar animal3 = new DTOTratamientosPagar(3,"Squid","Laila", 26, date,140 );
+        DTOTratamientosPagar animal0 = new DTOTratamientosPagar(0,"Vivo","Buddy", 24,date,200, "basectomia canina" );
+        DTOTratamientosPagar animal1 = new DTOTratamientosPagar(1,"Muerto","Bella",23, date,100, "reanimacion" );
+        DTOTratamientosPagar animal2 = new DTOTratamientosPagar(2,"Vivo","Buddy", 24, date,50, "cuidados post operatorios");
+        DTOTratamientosPagar animal3 = new DTOTratamientosPagar(3,"Muerto","Bella", 23, date,140, "muerte asistidad" );
         animals.getItems().addAll(animal0,animal1,animal2,animal3);
+    }
+
+    public ArrayList<DTOTratamientosPagar> obtenerTratamientoPagar() {
+        return listaAnimalito;
     }
 }
