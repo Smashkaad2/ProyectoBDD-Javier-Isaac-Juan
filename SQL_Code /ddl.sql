@@ -13,7 +13,7 @@ drop table Dueno;
 drop table Clinica;
 drop table Cargo;
 drop table MetodoPago;
-drop table estado;
+drop table Estado;
 
 -- CREACION DE TABLA ESTADO
 -- SE LE ANNADIO FOREIGN A ESTADO ACTUAL EN TABLA MASCOTA
@@ -91,8 +91,10 @@ create table Corral
 	clinica_id int,
 	ocupacion int,
 	capacidad int,
+	estado_ocupacion int,
 	PRIMARY KEY (corral_id),
-	FOREIGN KEY (clinica_id) REFERENCES Clinica(clinica_id)
+	FOREIGN KEY (clinica_id) REFERENCES Clinica(clinica_id),
+	FOREIGN KEY (estado_ocupacion) REFERENCES Estado(id_estado)
 
 
 );
