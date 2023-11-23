@@ -11,4 +11,7 @@ public class ControllerModificarEliminarStaff {
     }
     public void onClickRegistrar(ActionEvent actionEvent) {
     }
+
+    public void onClickEliminar(ActionEvent event) {
+    }
 }

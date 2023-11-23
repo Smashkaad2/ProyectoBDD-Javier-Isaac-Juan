@@ -137,7 +137,7 @@ public class Aplicacion extends Application {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(Aplicacion.class.getResource("modificarEliminarUsuarioDuenio.fxml"));
             AnchorPane pane = fxmlLoader.load();
-            ControllerModificarEliminarMascota controller = fxmlLoader.getController();
+            ControllerModificarEliminarDuenio controller = fxmlLoader.getController();
             controller.setAplicacion(this);
             Scene scene = new Scene(pane);
             primaryStage.setScene(scene);
