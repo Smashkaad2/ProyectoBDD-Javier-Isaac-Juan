@@ -24,11 +24,26 @@ public class Aplicacion extends Application {
         stage.setScene(scene);
         stage.show();
     }
-    public void abrirPagarFactura(){
+    public void abrirAgendarCita(){
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(Aplicacion.class.getResource("agendarCita.fxml"));
             AnchorPane pane = fxmlLoader.load();
             ControllerAgendarCita controller = fxmlLoader.getController();
+            controller.setAplicacion(this);
+            Scene scene = new Scene(pane);
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        }
+        catch (IOException e){
+            System.out.println("MAL");
+
+        }
+    }
+    public void abrirPagarFactura(){
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(Aplicacion.class.getResource("pagarFactura.fxml"));
+            AnchorPane pane = fxmlLoader.load();
+            ControllerPagarFactura controller = fxmlLoader.getController();
             controller.setAplicacion(this);
             Scene scene = new Scene(pane);
             primaryStage.setScene(scene);
