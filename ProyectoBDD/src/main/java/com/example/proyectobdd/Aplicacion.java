@@ -55,6 +55,114 @@ public class Aplicacion extends Application {
         }
     }
 
+    public void abrirRegistrarUsuario(){
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(Aplicacion.class.getResource("registrarUsuario.fxml"));
+            Pane pane = fxmlLoader.load();
+            ControllerRegistrarUsuario controller = fxmlLoader.getController();
+            controller.setAplicacion(this);
+            Scene scene = new Scene(pane);
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        }
+        catch (IOException e){
+            System.out.println("MAL");
+
+        }
+    }
+
+    public void abrirActualizarUser(){
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(Aplicacion.class.getResource("actualizarUser.fxml"));
+            Pane pane = fxmlLoader.load();
+            ControllerActualizarUser controller = fxmlLoader.getController();
+            controller.setAplicacion(this);
+            Scene scene = new Scene(pane);
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        }
+        catch (IOException e){
+            System.out.println("MAL");
+
+        }
+    }
+
+    public void abrirBUscarMascota(){
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(Aplicacion.class.getResource("buscarMascota.fxml"));
+            AnchorPane pane = fxmlLoader.load();
+            ControllerBuscarMascota controller = fxmlLoader.getController();
+            controller.setAplicacion(this);
+            Scene scene = new Scene(pane);
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        }
+        catch (IOException e){
+            System.out.println("MAL");
+
+        }
+    }
+    public void abrirEliminarCuenta(){
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(Aplicacion.class.getResource("eliminarCuenta.fxml"));
+            AnchorPane pane = fxmlLoader.load();
+            ControllerEliminarCuenta controller = fxmlLoader.getController();
+            controller.setAplicacion(this);
+            Scene scene = new Scene(pane);
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        }
+        catch (IOException e){
+            System.out.println("MAL");
+
+        }
+    }
+
+    public void abrirModificarEliminarMascota(){
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(Aplicacion.class.getResource("modificarEliminarMascota.fxml"));
+            Pane pane = fxmlLoader.load();
+            ControllerModificarEliminarMascota controller = fxmlLoader.getController();
+            controller.setAplicacion(this);
+            Scene scene = new Scene(pane);
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        }
+        catch (IOException e){
+            System.out.println("MAL");
+
+        }
+    }
+    public void abrirModificarEliminarUsuarioDuenio(){
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(Aplicacion.class.getResource("modificarEliminarUsuarioDuenio.fxml"));
+            AnchorPane pane = fxmlLoader.load();
+            ControllerModificarEliminarMascota controller = fxmlLoader.getController();
+            controller.setAplicacion(this);
+            Scene scene = new Scene(pane);
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        }
+        catch (IOException e){
+            System.out.println("MAL");
+
+        }
+    }
+    public void abrirModificarEliminarUsuarioStaff(){
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(Aplicacion.class.getResource("modificarEliminarUsuarioStaff.fxml"));
+            Pane pane = fxmlLoader.load();
+            ControllerModificarEliminarStaff controller = fxmlLoader.getController();
+            controller.setAplicacion(this);
+            Scene scene = new Scene(pane);
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        }
+        catch (IOException e){
+            System.out.println("MAL");
+
+        }
+    }
     public static void main(String[] args) {
         launch();
     }

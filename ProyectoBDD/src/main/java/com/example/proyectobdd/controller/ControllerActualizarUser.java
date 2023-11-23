@@ -1,5 +1,6 @@
 package com.example.proyectobdd.controller;
 
+import com.example.proyectobdd.Aplicacion;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -9,6 +10,11 @@ import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
 public class ControllerActualizarUser {
+    private Aplicacion aplicacion;
+
+    public void setAplicacion(Aplicacion aplicacion) {
+        this.aplicacion = aplicacion;
+    }
 
     @FXML
     private Button buttonSubmit;

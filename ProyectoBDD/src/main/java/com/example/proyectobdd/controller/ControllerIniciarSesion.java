@@ -39,5 +39,6 @@ public class ControllerIniciarSesion {
     }
 
     public void onClickRegister(ActionEvent actionEvent) {
+        aplicacion.abrirRegistrarUsuario();
     }
 }

@@ -1,11 +1,17 @@
 package com.example.proyectobdd.controller;
 
+import com.example.proyectobdd.Aplicacion;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 
 public class ControllerBuscarMascota {
+    private Aplicacion aplicacion;
+
+    public void setAplicacion(Aplicacion aplicacion) {
+        this.aplicacion = aplicacion;
+    }
     @FXML
     private TextField txtFieldNombreMascota;
     @FXML
@@ -26,4 +32,5 @@ public class ControllerBuscarMascota {
     @FXML
     public void onClickBUscar() {
     }
+
 }
