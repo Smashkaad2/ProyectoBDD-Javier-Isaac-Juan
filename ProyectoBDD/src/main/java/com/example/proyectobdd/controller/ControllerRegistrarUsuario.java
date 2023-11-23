@@ -16,5 +16,6 @@ public class ControllerRegistrarUsuario {
     }
 
     public void onClickDueño(ActionEvent actionEvent) {
+        aplicacion.abrirModificarEliminarUsuarioDuenio();
     }
 }

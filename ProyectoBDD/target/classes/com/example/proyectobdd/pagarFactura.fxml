@@ -13,7 +13,7 @@
 
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ComboBox?>
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="920.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.clonada2.Controller.ControllerPagarFactura">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="920.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectobdd.controller.ControllerPagarFactura">
     <children>
         <TableView fx:id="animals" layoutX="309.0" layoutY="77.0" prefHeight="246.0" prefWidth="600.0">
             <columns>
