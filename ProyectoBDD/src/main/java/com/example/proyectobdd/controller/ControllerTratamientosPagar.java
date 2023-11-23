@@ -1,5 +1,6 @@
 package com.example.proyectobdd.controller;
 
+import com.example.proyectobdd.Aplicacion;
 import com.example.proyectobdd.DTO.DTOTratamientosPagar;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -25,6 +26,11 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class ControllerTratamientosPagar {
+    private Aplicacion aplicacion;
+
+    public void setAplicacion(Aplicacion aplicacion) {
+        this.aplicacion = aplicacion;
+    }
 
     // Animals is equal to havng a list o tratamientos, the problem is that I cannot change that because then explotes and gives me an error :)
     @FXML

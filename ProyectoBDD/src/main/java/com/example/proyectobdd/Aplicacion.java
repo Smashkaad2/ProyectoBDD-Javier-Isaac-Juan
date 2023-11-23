@@ -163,6 +163,52 @@ public class Aplicacion extends Application {
 
         }
     }
+    public void abrirTratamientosPagar(){
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(Aplicacion.class.getResource("tratamientosPagar.fxml"));
+            Pane pane = fxmlLoader.load();
+            ControllerTratamientosPagar controller = fxmlLoader.getController();
+            controller.setAplicacion(this);
+            Scene scene = new Scene(pane);
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        }
+        catch (IOException e){
+            System.out.println("MAL");
+
+        }
+    }
+    public void abrirVerHistoriaClinica(){
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(Aplicacion.class.getResource("verHistoriaClinica.fxml"));
+            AnchorPane pane = fxmlLoader.load();
+            ControllerVerHistoriaClinica controller = fxmlLoader.getController();
+            controller.setAplicacion(this);
+            Scene scene = new Scene(pane);
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        }
+        catch (IOException e){
+            System.out.println("MAL");
+
+        }
+    }
+    public void abrirRegistrarExamen(){
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(Aplicacion.class.getResource("registrarExamen.fxml"));
+            AnchorPane pane = fxmlLoader.load();
+            ControllerRegistrarExamen controller = fxmlLoader.getController();
+            controller.setAplicacion(this);
+            Scene scene = new Scene(pane);
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        }
+        catch (IOException e){
+            System.out.println("MAL");
+
+        }
+    }
+
     public static void main(String[] args) {
         launch();
     }

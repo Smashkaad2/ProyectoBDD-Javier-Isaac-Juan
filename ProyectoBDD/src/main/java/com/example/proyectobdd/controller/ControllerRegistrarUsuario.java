@@ -11,6 +11,7 @@ public class ControllerRegistrarUsuario {
     }
 
     public void onClickStaff(ActionEvent actionEvent) {
+        aplicacion.abrirModificarEliminarUsuarioStaff();
 
     }
 
