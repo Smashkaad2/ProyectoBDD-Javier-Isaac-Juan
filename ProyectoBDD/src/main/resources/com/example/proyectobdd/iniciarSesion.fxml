@@ -6,7 +6,7 @@
 <?import javafx.scene.text.*?>
 
 
-<Pane prefHeight="346.0" prefWidth="313.0"
+<AnchorPane prefHeight="346.0" prefWidth="313.0"
       xmlns="http://javafx.com/javafx/8"
       xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="com.example.proyectobdd.controller.ControllerIniciarSesion">
@@ -37,4 +37,4 @@
          </font>
       </Text>
    </children>
-</Pane>
+</AnchorPane>

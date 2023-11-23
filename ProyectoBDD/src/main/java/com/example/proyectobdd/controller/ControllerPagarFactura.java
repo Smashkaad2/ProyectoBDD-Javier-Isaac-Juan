@@ -1,6 +1,7 @@
-package com.example.clonada2.Controller;
+package com.example.proyectobdd.controller;
 
-import com.example.clonada2.entity.DTOTratamientosPagar;
+import com.example.proyectobdd.Aplicacion;
+import com.example.proyectobdd.DTO.DTOTratamientosPagar;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.value.ObservableIntegerValue;
 import javafx.collections.FXCollections;
@@ -22,6 +23,11 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class ControllerPagarFactura implements Initializable {
+    private Aplicacion aplicacion;
+
+    public void getAplicacion(Aplicacion aplicacion){
+        this.aplicacion = aplicacion;
+    }
 
     // Animals is equal to havng a list o tratamientos, the problem is that I cannot change that because then explotes and gives me an error :)
     @FXML
@@ -99,9 +105,6 @@ public class ControllerPagarFactura implements Initializable {
 
         // Aqui lo que se tiene que obtener es toda la info de unsos query
 
-
-
-
     }
 
     @FXML
@@ -177,11 +180,11 @@ public class ControllerPagarFactura implements Initializable {
         //  Date date = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
         // aqui esto se debe llenar con lo que viene de tratamientos por pagar
         // lo que se tiene que cargar es una lista, en vez de hacer todos estos add, se mete la lista por dentro animals
-        DTOTratamientosPagar animal0 = new DTOTratamientosPagar(0,"Vivo","Buddy", 24,date,200, "basectomia canina" );
-        DTOTratamientosPagar animal1 = new DTOTratamientosPagar(1,"Muerto","Bella",23, date,100, "reanimacion" );
-        DTOTratamientosPagar animal2 = new DTOTratamientosPagar(2,"Vivo","Buddy", 24, date,50, "cuidados post operatorios");
-        DTOTratamientosPagar animal3 = new DTOTratamientosPagar(3,"Muerto","Bella", 23, date,140, "muerte asistida" );
-        animals.getItems().addAll(animal0,animal1,animal2,animal3);
+        //DTOTratamientosPagar animal0 = new DTOTratamientosPagar(0,"Vivo","Buddy", 24,date,200, "basectomia canina" );
+        //DTOTratamientosPagar animal1 = new DTOTratamientosPagar(1,"Muerto","Bella",23, date,100, "reanimacion" );
+        //DTOTratamientosPagar animal2 = new DTOTratamientosPagar(2,"Vivo","Buddy", 24, date,50, "cuidados post operatorios");
+        //DTOTratamientosPagar animal3 = new DTOTratamientosPagar(3,"Muerto","Bella", 23, date,140, "muerte asistida" );
+        //animals.getItems().addAll(animal0,animal1,animal2,animal3);
     }
 
     void setupLabels () {
@@ -206,5 +209,7 @@ public class ControllerPagarFactura implements Initializable {
 
     }
 
-
+    public void setAplicacion(Aplicacion aplicacion) {
+        this.aplicacion = aplicacion;
+    }
 }

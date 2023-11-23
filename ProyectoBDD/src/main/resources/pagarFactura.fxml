@@ -15,7 +15,7 @@
 <?import javafx.scene.control.ComboBox?>
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="920.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.clonada2.Controller.ControllerPagarFactura">
     <children>
-        <TableView fx:id="animals" layoutX="309.0" layoutY="77.0" onMouseClicked="#rowClicked" prefHeight="246.0" prefWidth="600.0">
+        <TableView fx:id="animals" layoutX="309.0" layoutY="77.0" prefHeight="246.0" prefWidth="600.0">
             <columns>
                 <TableColumn fx:id="idCol" prefWidth="90.0" text="tratamientoId" />
                 <TableColumn fx:id="descripcionCol" prefWidth="120.0" text="Descripcion" />

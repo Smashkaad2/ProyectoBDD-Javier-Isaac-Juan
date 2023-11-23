@@ -6,7 +6,7 @@
 <?import javafx.scene.text.*?>
 
 
-<Pane prefHeight="434.0" prefWidth="341.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectobdd.controller.ControllerBuscarMascota">
+<AnchorPane prefHeight="434.0" prefWidth="341.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectobdd.controller.ControllerBuscarMascota">
     <children>
         <Label layoutX="14.0" layoutY="15.0" text="Buscar Mascota">
             <font>
@@ -36,4 +36,4 @@
         </Button>
         <Button layoutX="26.0" layoutY="136.0" mnemonicParsing="false" onAction="#onClickBUscar" text="Buscar" />
     </children>
-</Pane>
+</AnchorPane>

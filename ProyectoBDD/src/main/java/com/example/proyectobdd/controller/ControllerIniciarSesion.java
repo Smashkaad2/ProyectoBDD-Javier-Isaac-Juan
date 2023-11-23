@@ -1,5 +1,6 @@
 package com.example.proyectobdd.controller;
 
+import com.example.proyectobdd.Aplicacion;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -8,6 +9,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
 public class ControllerIniciarSesion {
+    private Aplicacion aplicacion;
 
     @FXML
     private PasswordField passwordFieldPassword;
@@ -27,7 +29,13 @@ public class ControllerIniciarSesion {
     @FXML
     private TextField txtfieldUser;
 
+    public void setAplicacion(Aplicacion aplicacion){
+        this.aplicacion = aplicacion;
+    }
+
     public void onClickLogin(ActionEvent actionEvent) {
+        System.out.println("Login");
+        this.aplicacion.abrirPagarFactura();
     }
 
     public void onClickRegister(ActionEvent actionEvent) {
